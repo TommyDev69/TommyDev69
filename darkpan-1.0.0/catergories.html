@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIwQp6LFnlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcEiQSvqcyVLLd9aMhXd13uQjoXEKNosOWaZqXgel0g==">
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>TOMMY QUIZ </h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Tommy</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="dashboad.html" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+
+                    <a href="catergories.html" class="nav-item nav-link active"><i class="fas fa-tape" onclick="job()" data-toggle="modal" data-target="#tommy" tabindex="-1"></i> Categories</a>
+
+                    <a href="manageQuiz.html" class="nav-item nav-link "><i class="fa fa-tablet" aria-hidden="true"></i> Manage Quiz </a>
+
+                    <a href="" class="nav-item nav-link "> <i class="fas fa-handshake"></i> Activate Quiz </a>
+
+
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
+
+                    <!-- <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a> -->
+
+                    <!-- <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> -->
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="signin.html" class="dropdown-item">Sign In</a>
+                            <a href="signup.html" class="dropdown-item">Sign Up</a>
+                            <!-- <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a> -->
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Mjay send you a message</h6>
+                                        <small>10 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Tommy send you a message</h6>
+                                        <small>30 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Makanjuola send you a message</h6>
+                                        <small>1 hour ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>10 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>30 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>1 hour ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">Tomiwa </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Sale & Revenue Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-line fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total  Categories</p>
+                                <h6 class="mb-0" id="catCount">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total manage Quiz</p>
+                                <h6 class="mb-0" >0</h6>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-area fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total live Quiz</p>
+                                <h6 class="mb-0" id="Live">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total not live Quiz</p>
+                                <h6 class="mb-0" id="notLive">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sale & Revenue End -->
+
+
+            <!-- Sales Chart Start -->
+            <!-- <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Total question Percentage </h6>
+                                <a href="">Grade</a>
+                            </div>
+                            <canvas id="worldwide-sales"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Categories</h6>
+                                <a href="">Performance</a>
+                            </div>
+                            <canvas id="salse-revenue"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Sales Chart End -->
+
+
+            <!-- Recent Sales Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Project</h6>
+                        <button type="button"><i class="fas fa-clipboard-check btn-outline-danger p-2" data-toggle="modal" data-target="#tommy" tabindex="-1">Categories</i></button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table text-start align-middle  table-hover mb-0">
+                            <thead>
+                                <tr class="text-white">
+                                    <th scope="col">S/N</th>
+                                    <th scope="col">NAME</th>
+                                    <th scope="col">USETYPE</th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col">ACTION</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="table1">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- modal -->
+            <div class="modal" id="tommy" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-dark">Categories</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12 input-group d-flex">
+                                    <div class="input-group-prepend font-weight-bold pt-2" style="background-color: rgb(95, 90, 90); color: #eee;"> <i class="fa fa-user" aria-hidden="true"></i> Categories</div>
+
+                                    <input type="text" class="input-group-text form-control custom-input" id="modal1">
+
+                                </div>
+
+                                <div class="col-md-12 mt-3 input-group d-flex">
+                                    <div class="input-group-prepend font-weight-bold pt-2" style="background-color: rgb(95, 90, 90); color: #eee;"> <i class="fa fa-bell" aria-hidden="true"></i> Status</div>
+
+                                    <select name="" class="input-group-select form-control custom-select" id="modal2">
+
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+
+                          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="job()">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- MODAL OF EDIT IN THE TABLE -->
+
+            <div class="modal" id="tommy2" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title text-dark">Categories</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12 input-group d-flex">
+                                <div class="input-group-prepend font-weight-bold pt-2" style="background-color: rgb(95, 90, 90); color: #eee;"> <i class="fa fa-user" aria-hidden="true"></i> Categories</div>
+
+                                <input value="" style="background-color: black !important;color:white !important" type="text" class="form-control" id="editModalInput">
+
+                            </div>
+
+                            <div class="col-md-12 mt-3 input-group d-flex">
+                                <div class="input-group-prepend font-weight-bold pt-2" style="background-color: rgb(95, 90, 90); color: #eee;"> <i class="fa fa-bell" aria-hidden="true"></i> Status</div>
+
+                                <select name="" class="input-group-select form-control custom-select" id="editSelectModal">
+
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                        <button type="button" class="btn btn-primary"  data-dismiss="modal" onclick="updateModal()" >Save changes</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- SWEETALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+    <script>
+
+        // let modal1 = document.getElementById('modal1');
+        // let modal2 = document.getElementById('modal2');
+        // let tabel1 = document.getElementById('table1');
+        
+        // let status =[
+        //     {state : 'live'},
+        //     {state : "Notlive"}
+        // ]
+
+        // modal2.innerHTML = "<option value=''>Select status</option>"
+        // for (let a = 0; a < status.length; a++) {
+        //     modal2.innerHTML += `<option value='${status[a].state}'> ${status[a].state} </option> `
+            
+        // }
+        // function refetch() {
+        //     let storage = JSON.parse(localStorage.getItem('category')) || null
+        //     if (storage !== null) {
+        //         table1.innerHTML = '';
+        //         storage.forEach((element,a) => {
+        //             table1.innerHTML += `
+                    
+        //             <tr>
+        //                 <td> ${a + 1} </td>
+        //                 <td> ${element.name} </td>
+        //                 <td> ${element.usertype} </td>
+        //                 <td> ${element.status} </td>
+        //                 <td>
+        //                     <i class="fa fa-trash" aria-hidden="true" onclick= 'deleteItems(${a})'></i>
+        //                     <i class="fas fa-edit" onclick="editItems('${element.id}')"></i>    
+        //                 </td>
+        //             </tr>
+        //           `
+        //           console.log( table1.innerHTML);
+                    
+        //         }); 
+                
+        //     }
+            
+        // }
+        // refetch()
+
+        // function job() {
+        //     let duplicate = false
+        //     let items = JSON.parse(localStorage.getItem('category')) || null;
+            
+        //     let obj = {
+        //         id : Math.floor(Math.random() * 9000000000),
+        //         name : modal1.value,
+        //         usertype : 'Ádmin',
+        //         status : modal2.value
+        //     }
+
+        //     if (modal1.value == '' || modal2.value == '') {
+        //         return alert('the field must not be empty')
+                
+        //     }
+
+        //     let empty = []
+
+        //     if (items == null) {
+        //         empty.push(obj)    
+        //     }
+
+        //     else{
+        //         empty = items
+        //         for (let i = 0; i < empty.length; i++) {
+        //             if (obj.name == empty[i].name) {
+        //                 duplicate = true;
+                        
+        //             }   
+                    
+        //         }
+
+        //         if(duplicate){
+        //             alert('duplucate entry detected')
+        //         }
+
+        //         else{
+        //             empty.push(obj)
+        //         }
+        //     }
+        //     localStorage.setItem('category', JSON.stringify(empty))
+        //     refetch()
+        // }
+
+        // function deleteItems(param){
+        //     let del = JSON.parse(localStorage.getItem('category')) || null
+        //     del.splice(param,1)
+        //     refetch()
+        // }
+
+        let modal1 = document.querySelector('#modal1');
+        let modal2 = document.querySelector("#modal2");
+        let table1 =  document.querySelector('#table1');
+
+        let empty = ""
+
+        let editModal = document.querySelector('#editModalInput')
+        let editSelectModal = document.querySelector('#editSelectModal')
+        console.log(editSelectModal);
+        console.log(editSelectModal);
+
+        let myselect=[
+            {state:"Live"},
+            {state:'notLive'}
+        ]
+
+        for (let i = 0; i < myselect.length; i++) {
+            modal2.innerHTML += `<option value ="${myselect[i].state}">${myselect[i].state}</option>`
+            editSelectModal.innerHTML += `<option value ="${myselect[i].state}">${myselect[i].state}</option>`
+            
+            
+        }
+
+        function refetch() {
+           let real = JSON.parse(localStorage.getItem('Storage')) || null;
+
+            if(real !== null){
+                table1.innerHTML = ""
+                let catCount = 0;
+                let live = 1;
+                let notLive =1;
+                real.forEach((element , a) => {
+                    catCount = Number(a + 1)
+                    table1.innerHTML +=
+                    `
+                        <tr>
+                            <td> ${a + 1}</td>
+                            <td>${element.name}</td>
+                            <td class="ml-3"> ${element.usertype} </td>
+                            <td class="ml-3">${element.status}</td>
+                            <td class='ml-3'>
+                               <i class="fa fa-trash" aria-hidden="true" onclick = 'deleteName(${a})'></i>
+                               <i class='fas fa-edit' onclick = "editButton(${element.id})" data-toggle="modal" data-target="#tommy2" tabindex="-1"></i>
+                            </td>
+                        </tr>
+                    `
+                    if (element.status == 'notLive') {
+                        document.getElementById('notLive').innerHTML = notLive ++;
+                        console.log(notLive ++);
+
+                    } ;
+                    if (element.status == 'Live'){
+                        document.getElementById('Live').innerHTML = live ++;
+                        console.log(Live ++);
+                    }
+                });
+                document.getElementById('catCount').innerHTML = real.length
+            }
+
+        }
+        refetch();
+
+        function job() {
+            let duplicate = false;
+            let status = false;
+
+            var localStorageData = JSON.parse(localStorage.getItem('Storage')) || null
+
+            let mode = {
+                id : Math.floor(Math.random() * 900000000000),
+                name : modal1.value,
+                usertype : 'Admin',
+                status : modal2.value
+            }
+
+            let tomax = [];
+
+
+            if(modal1.value ==''|| modal2.value ==''){
+                return alert('please select any item')
+            }
+
+
+
+
+            if (localStorageData == null) {
+                tomax.push(mode)
+
+            }
+
+            else{
+                tomax = localStorageData;
+                for (let i = 0; i < tomax.length; i++) {
+                    if(mode.name == tomax[i].name){
+                        status = true;
+                    };
+                }
+
+                if (status){
+                    alert("duplicate entry detected")
+
+                }
+
+                else{
+                    tomax.push(mode)
+                }
+            }
+
+            localStorage.setItem("Storage", JSON.stringify(tomax))
+            refetch();
+        }
+
+        function deleteName(para){
+            swal({
+                title : 'Are You Sure',
+                text : 'Once deleted, You will not be able to recover this  file',
+                icon : 'warning',
+                button : 'true',
+                dangerMode : 'true',
+            })
+
+            .then((willDelete) => {
+                if (willDelete) {
+                    let dash = JSON.parse(localStorage.getItem('Storage')) || null;
+                    if(dash) {
+                        dash.splice(para, 1);
+                        localStorage.setItem('Storage', JSON.stringify(dash) )
+                    }
+
+                    swal('proof!  Your imaginary file has been deleted', {
+                        icon : 'success'
+                    });
+                    refetch()
+
+                }
+                else {
+                    refetch()
+                    swal('the item remain unchange' , {
+                    })
+
+                }
+
+            });
+
+        }
+
+        function editButton(param) {
+            empty = param
+            let obj = ""
+
+            let editCat = JSON.parse(localStorage.getItem('Storage')) || null;
+
+            for(let i = 0; i < editCat.length; i++) {
+                if (editCat[i].id == param) {
+                    obj = editCat[i]
+                }
+            }
+            editModal.value = obj.name
+            editSelectModal.value = obj.status;
+           
+            refetch()
+        }
+
+
+        function updateModal(update){
+            let editStoreUpdate = JSON.parse(localStorage.getItem('Storage'))
+            console.log(editStoreUpdate);
+            if (editModal1.value == "" || editModal2.value == "") {
+                alert("Input cannot be empty")
+            }
+            else{
+                for (let i = 0; i < editStoreUpdate.length; i++) {
+                    if (editStoreUpdate[i].id == empty) {
+                        console.log(editStoreUpdate[i]);
+                        editStoreUpdate[i].name = editModal1.value;
+                        editStoreUpdate[i].status = editSelectModal.value
+
+
+                    }
+
+                }
+            }
+
+
+           localStorage.setItem('Storage', JSON.stringify(editStoreUpdate))
+           refetch()
+
+        }
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

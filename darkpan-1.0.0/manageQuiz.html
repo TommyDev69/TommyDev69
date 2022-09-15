@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIwQp6LFnlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcEiQSvqcyVLLd9aMhXd13uQjoXEKNosOWaZqXgel0g==">
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>TOMMY QUIZ </h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Tommy</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="dashboad.html" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+
+                    <a href="catergories.html" class="nav-item nav-link "><i class="fas fa-tape" onclick="job()" data-toggle="modal" data-target="#tommy" tabindex="-1"></i> Categories</a>
+
+                    <a href="catergories.html" class="nav-item nav-link "><i class="fa fa-tablet" aria-hidden="true"></i> Manage Quiz </a>
+
+                    <a href="" class="nav-item nav-link "> <i class="fas fa-handshake"></i> Activate Quiz </a>
+
+                    
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
+
+                    <!-- <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a> -->
+                   
+                    <!-- <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> -->
+                   
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="signin.html" class="dropdown-item">Sign In</a>
+                            <a href="signup.html" class="dropdown-item">Sign Up</a>
+                            <!-- <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a> -->
+                        </div>
+                    </div>
+
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>preformance</a>
+
+
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Mjay send you a message</h6>
+                                        <small>10 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Tommy send you a message</h6>
+                                        <small>30 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Makanjuola send you a message</h6>
+                                        <small>1 hour ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>10 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>30 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>1 hour ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">Tomiwa </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Sale & Revenue Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-line fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total  Categories</p>
+                                <h6 class="mb-0" id="catCount">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total manage Quiz</p>
+                                <h6 class="mb-0" >0</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-area fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total live Quiz</p>
+                                <h6 class="mb-0" id="Live">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total not live Quiz</p>
+                                <h6 class="mb-0" id="notLive">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sale & Revenue End -->
+
+
+            <!-- Sales Chart Start -->
+             <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Total question Percentage </h6>
+                                <a href="">Grade</a>
+                            </div>
+                            <canvas id="worldwide-sales"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Categories</h6>
+                                <a href="">Performance</a>
+                            </div>
+                            <canvas id="salse-revenue"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- Sales Chart End -->
+
+
+            <!-- Recent Sales Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+                    <h6 class="mb-5">Project</h6>
+                    <div class="row">
+                        <div class="col-8 row">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2"  id="">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Category</div>
+                                        </div>
+                                        <select class="custom-select col-6" id="catfetch" onchange="refetch()">
+                                            <option value=""></option>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                               <div class="col-6">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Filter</div>
+                                     </div>
+                                        <input name="" type="text" class="input-group-text col-6"  id="filterSearch" placeholder="search" onkeyup="refetch()">
+                                </div>
+                               </div>
+
+                               
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                          <button class=" ml-auto" type="button" style='float:right;'><i class="fas fa-clipboard-check btn-outline-danger  p-2" data-toggle="modal" data-target="#tommyManage" tabindex="-1">Manage</i></button>
+                             
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table text-start align-middle  table-hover mb-0">
+                            <thead>
+                                <tr class="text-white">
+                                    <th scope="col">S/N</th>
+                                    <th scope="col">CATEGORY</th>
+                                    <th scope="col">QUESTIONS</th>
+                                    <th scope="col">ANSWER</th>
+                                    <th scope="col">CORRECTANSWER</th>
+                                    <th scope="col">ACTION</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- modal -->
+            <div class="modal" id="tommyManage" tabindex="-1">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <h5 class="modal-title text-dark">MANAGE QUIZ</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-header row">
+                                <div class="col-md-8 ml-5 ">
+                                    <div class="input-group mb-2 ">
+                                        <input type="number" class="form-sm-control" id="number" placeholder="">
+                                        <div class="input-group-append ml-5">
+                                          <button type="button" class="input-group-text" onclick="generate()">GO</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="input-group mb-2" id="message">
+                                        <div class="input-group-prepend ">
+                                           <div class="input-group-text">Manage Quiz</div>
+                                        </div>
+                                        <select class="custom-select" id="linkMe" style="width:40%;" >
+                                           <option value="1">select your destiny</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                
+                            </div>   
+                        <div class="modal-body">
+
+                            <div class="card-deck row" id="rowCard">
+                                
+                              </div>
+
+                            
+                            
+                            </div>
+                               
+                            <div class="modal-footer mt-2">
+                               <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveQuiz()">Save Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            <!-- MODAL OF EDIT IN THE TABLE -->
+            <div class="modal" id="tommyedit" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <p class="modal-title">MANAGE EDIT SELECT</p>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-deck " id="rowCard">
+                            <div class="card  ml-3">
+                                <header class="text-center">QUESTION</header>
+                                <div class="card-body">
+                                    <div class="form-group ">
+                                        <textarea class="form-control bg-white" id="editTextArea" rows="3"></textarea>
+                                    </div>
+                                    <select class="custom-select col-12 my-1 mr-sm-2" onchange="editSelect(event)" id="editAnswer">
+                                        <option selected>Choose...</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+        
+                                    <form>
+                                        <h4 class="text-dark">CORRECT ANSWER</h4>
+                                        <div class="row" id="editInputSet">
+
+                                             <!-- <div class="form-group mb-3 col-6">
+                                                <input type="text" class="form-control bg-white" id="editInput2">
+                                            </div> -->
+                                
+                                        </div>
+                                    </form>
+
+                                    <div class="row" id="editOpt">
+                                        
+                                       
+                                    </div>
+
+                                
+                                       
+                                    
+                                
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted fas fa-concierge-bell" style="margin-left:30%;">Tommy Quiz <i class="fas fa-concierge-bell"></i></small>
+        
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="editModal()" >update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- the modal 2 of edit -->
+            
+        </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- sweetAlert source -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        
+        let generateCard = document.querySelector('#number');
+
+        let rowCard = document.querySelector('#rowCard');
+
+        // textare section
+        let setQuestion = document.querySelector('#textArea')
+
+        // input section
+        let inputField = document.querySelector('#input1')
+        
+        // local storage of category module to work here 2nd step
+
+        let categoryMsg = document.querySelector('#message')
+        categoryMsg.style.display = 'none'
+
+       
+         // the local storage is for manager quiz, 1st step
+         let categoryData = document.querySelector('#linkMe')
+
+        // local storage of category module to work here
+        let storage = JSON.parse(localStorage.getItem('Storage')) || null
+
+        // the select input to deplay in the front end page
+        let catfetch = document.querySelector("#catfetch")
+        // the search input to deplay in the front end page
+        let filterSearch = document.querySelector("#filterSearch")
+
+        // edit section
+        let editer =[]
+
+        let editTextArea = document.querySelector("#editTextArea");
+
+        let editAnswer = document.querySelector('#editAnswer')
+
+        // let editInput = document.querySelector('#editInput')
+
+        let editInputSet = document.querySelector("#editInputSet")
+
+        let editOpt = document.querySelector("#editOpt")
+
+
+
+
+        if (storage != null) {
+            
+            categoryData.innerHTML = "<option value =''>select</option>"
+
+            catfetch.innerHTML = "<option value =''>select</option>"
+
+            
+            for (let i = 0; i < storage.length; i++) {
+                categoryData.innerHTML += `<option value= "${storage[i].name}"> ${storage[i].name} </option>`
+                catfetch.innerHTML += `<option value= "${storage[i].name}"> ${storage[i].name} </option>`
+            }
+            
+        }
+
+
+        function refetch() {
+
+           
+            var setQuizQuestions = JSON.parse(localStorage.getItem('setQuizQuestions')) || null
+            let tbody = document.querySelector('#tbody');
+            if (setQuizQuestions !== null) {
+                tbody.innerHTML = ""
+                if(catfetch.value){
+                    setQuizQuestions = setQuizQuestions.filter(el => el.category.toLowerCase() == catfetch.value.toLowerCase())
+                    if(setQuizQuestions == ""){
+                        tbody.innerHTML = "No Record Found"
+                    }
+                }
+
+                if(filterSearch.value){
+                    console.log(filterSearch.value);
+                    setQuizQuestions = setQuizQuestions.filter(el => el.category.toLowerCase().startsWith(filterSearch.value.toLowerCase()))
+                }
+               
+                for (let a = 0; a < setQuizQuestions.length; a++){
+                    let checkAnswer = setQuizQuestions[a].answer.map((el) => {
+                        return el.answerInput
+                    }).join(",");
+
+                    let checkCorrectAnswer = setQuizQuestions[a].answer.filter((el) => {
+                        return el.correctAnswer
+                    }).map((el) => {
+                        return el.answerInput
+                    })[0];
+
+                    tbody.innerHTML += 
+                    `
+                    <tr>
+                        <td> ${a + 1} </td>
+                        <td> ${setQuizQuestions[a].category} </td>
+                        <td> ${setQuizQuestions[a].question} </td>
+                        <td> ${checkAnswer} </td>
+                        <td><span class="badge badge-primary"> ${checkCorrectAnswer} </span></td>
+                        <td>
+                            <i class="fa fa-trash" aria-hidden="true" onclick = deleteManage(${a})></i>
+                            <i class="fas fa-edit" data-toggle="modal" data-target="#tommyedit" onclick = editManage(${setQuizQuestions[a].id})></i>
+                        </td>
+                    `
+                }
+                
+            }
+            
+        }
+        refetch()
+
+        function generate(){        
+            let categoryMsg = document.querySelector('#message')
+
+            rowCard.innerHTML ="";
+        
+            if (generateCard.value == '' ) {
+                alert('please generate er of questions you want') 
+            }
+
+            else{
+                categoryMsg.style.display = ''
+
+                for (let i = 0; i < Number(generateCard.value); i++) {
+                    rowCard.innerHTML +=
+                    `
+                        <div class="card col-4 ml-3" style="width:30%; margin-left:3%;">
+                            <header class="text-center">QUESTION</header>
+                            <div class="card-body">
+                                <div class="form-group ">
+                                    <textarea class="form-control bg-white" id="textArea${i}" rows="3"></textarea>
+                                </div>
+                                <select class="custom-select col-12 my-1 mr-sm-2" onchange="selectValue(event, ${i})" id="selectVal${i}">
+                                    <option selected>Choose...</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+
+                                <form>
+                                    <div class="row" id="selectInput${i}">
+                                        
+                                    </div>
+                                </form>
+
+
+                                <div class="row" id="optic${i}">
+                                
+                                </div>
+                            
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted fas fa-concierge-bell" style="margin-left:30%;">Tommy Quiz <i class="fas fa-concierge-bell"></i></small>
+
+                            </div>
+                        </div>
+                    `
+
+                
+                }
+
+            }
+             
+           
+             
+        }
+
+        function selectValue(e, i) {
+            let selectInput = document.getElementById(`selectInput${i}`)
+
+
+            selectInput.innerHTML = ""
+
+            // option section
+
+            let operate = document.querySelector(`#optic${i}`);
+
+            operate.innerHTML = "";
+
+
+            for (let a = 0; a < Number(e.target.value); a++) {
+                selectInput.innerHTML +=
+                `
+                    <div class="form-group mb-3 col-6">
+                        <input type="text" class="form-control bg-white" id="optValues${a}${i}">
+                    </div>
+                    
+                `
+           
+                operate.innerHTML += 
+                `
+                    <div class="form-check col-6 mt-3" style="padding-left:12%;">
+                        <input class="form-check-input ml-4" type="radio" name="gridRadios${i}" id="gridRadios2${i}${a}">
+                        <label class="form-check-label" for="invalidCheck2${i}">
+                        </label>
+                    </div>
+                `
+            }  
+            
+        }
+
+        function saveQuiz() {
+            let collectData = JSON.parse(localStorage.getItem('setQuizQuestions')) || null
+            // let parentId = Math.floor(Math.random() * 9000000000) * Math.floor(Math.random() * 9000000000)
+            let duplicate = false
+            // let selectVal = document.getElementById("selectVal") pls comment it
+            let setAllQuestions = []
+
+            // category value should also come here
+            let categoryData = document.querySelector('#linkMe')
+
+        
+            for (let q = 0; q < Number(generateCard.value); q++) {
+                let obj = {
+                    // parentId,
+                    id : Math.floor(Math.random() * 90000000000),
+                    category : categoryData.value,
+                    question : document.getElementById(`textArea${q}`).value,
+                    answer : [] 
+                }
+
+                let optNo = Number(document.getElementById(`selectVal${q}`).value)
+                for (let z = 0; z < optNo; z++) {
+                    let optionInput = {
+                        answerInput : document.getElementById(`optValues${z}${q}`).value,
+                        correctAnswer : document.getElementById(`gridRadios2${q}${z}`).checked
+                    }
+                    obj.answer.push(optionInput)
+                    
+                }
+                
+                if (collectData == null) {
+                    setAllQuestions.push(obj)
+                    
+                }
+
+                else{
+                    setAllQuestions = collectData
+                    for (let i = 0; i < setAllQuestions.length; i++) {
+
+                        if (obj.question == setAllQuestions[i].question) {
+                            duplicate = true
+                        }
+                        
+                    }
+
+                    if (duplicate){
+                        alert('duplicate entry detected')
+                    }
+
+                    else{
+                        setAllQuestions.push(obj)
+                    }
+                }
+            
+
+            }
+            localStorage.setItem("setQuizQuestions", JSON.stringify(setAllQuestions))
+            refetch()
+            
+        }
+
+
+        // edit section
+
+        function editManage(params) {
+            let editStorage = JSON.parse(localStorage.getItem('setQuizQuestions')) ||null
+            let editer = params;
+            let editObj = '';
+
+            for (let e = 0; e < editStorage.length; e++) {
+                if(editStorage[e].id == params){
+                   editObj =  editStorage[e]
+                }
+            }
+            editTextArea.value = editObj.question 
+            editAnswer.value = editObj.answer.length
+            editCon(editObj.answer) 
+            
+            refetch()
+            
+        }
+
+        // the editManger continue cos of their template to display answer
+        function editCon(tommy){
+            editInputSet.innerHTML = "";
+            editOpt.innerHTML = '';
+            editCheck = 0;
+
+            for (let k = 0; k < tommy.length; k++) {
+
+                editInputSet.innerHTML += 
+                ` 
+                    <div class="form-group mb-3 col-6">
+                        <label>option${k + 1}</label>
+                        <input type="text" class="form-control bg-white" value="${tommy[k].answerInput}" id="editInput${k}">
+                    </div>
+                `
+                editOpt.innerHTML +=
+                `
+                    <div class="form-check col-6 mt-3" style="padding-left:12%;">
+                        <input checked="${tommy[k].correctAnswer}" class="form-check-input ml-4" type="radio" name="gridRadios" id="optic1${k}">
+                        </label>
+                    </div>
+                    
+                `
+   
+                if (tommy[k].correctAnswer) {
+                 editCheck = k
+                
+                }
+            }
+
+            
+
+            document.querySelector(`#optic1${editCheck}`).checked = true
+
+
+        }
+        
+        function deleteManage(para){
+            swal({
+                title : 'Are You Sure',
+                text : 'Once deleted, You will not be able to recover this  file',
+                icon : 'warning',
+                button : 'true',
+                dangerMode : 'true',
+            })
+
+            .then((willDelete) => {
+                if (willDelete) {
+                    let dash = JSON.parse(localStorage.getItem('setQuizQuestions')) || null;
+                    if(dash) {
+                        dash.splice(para, 1);
+                        localStorage.setItem('setQuizQuestions', JSON.stringify(dash) )
+                    }
+
+                    swal('proof!  Your imaginary file has been deleted', {
+                        icon : 'success'
+                    });
+                    refetch()
+
+                }
+                else {
+                    refetch()
+                    swal('the item remain unchange' , {
+                    })
+
+                }
+
+            });
+
+        }
+    </script>
+
+  
+</body>
+
+</html>

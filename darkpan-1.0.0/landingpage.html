@@ -1,0 +1,253 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="landingpage.css">
+    <link rel="stylesheet" href="../../boot/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animation/animate.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+</head>
+<body>
+
+    <div class="container-md-fluid">
+         <!-- Navbar Start -->
+    <div class="container-fluid bg-dark mb-30">
+        <div class="row px-xl-5">
+            <!-- <div class="col-lg-3 d-none d-lg-block">
+                   
+            </div> -->
+            <div class="col-md-9">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                    <div class="row">
+                        <div class="col-12">
+                          <img src="../../../Downloads/images-removebg-preview.png"alt="" style="width:30%;">
+                          <h4 style="color: #eee;">Tommy Quiz </h4>
+                        </div>
+                    </div>
+
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon align-items-center"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-con tent-between " id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-3 m-auto row" style="font-size:22px;flex-wrap: wrap;">
+                            <a href="index.html" class="nav-item nav-link active mr-3 p-3">Home</a>
+                            <a href="shop.html" class="nav-item nav-link mr-3 p-3">Subject</a>
+                                <div class="d-flex mr-3 p-2">
+                                    <a href="detail.html" class="nav-item nav-link">Faq</a>
+                                    <div class="nav-item dropdown"  style="margin-left:-7px; margin-top:18px;">
+                                        <div href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-angle-down" s mtyle="margin-left:-10px; margin-bottom:10px;"></i></div>
+                                        <div class="dropdown-menu bg-primary rounded-0 border-0">
+                                            <a href="cart.html" class="dropdown-item">About us</a>
+                                            <a href="checkout.html" class="dropdown-item">Goal</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            <a href="contact.html" class="nav-item nav-link mr-3 p-3">Contact</a>
+                        </div>
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+            <!-- Carousel Start -->
+            <div class="container-fluid mb-3">
+                <div class="row px-xl-8">
+                    <div class="col-lg-3 bg-dark">
+                    
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="jumbotron jumbotron-fluid">
+                            <div class="container ">
+                
+                              <h1 class="display-4 font-weight-boldER text-center animatry ">TOMMY BRAIN TESTER QUIZ</h1>
+                              <h3 class="note mt-1 text-center">Confidence comes not from always been right, but from not fearing to be wrong</h3>
+                
+                                <div class="col-md-4 input-group m-auto " style="margin-top:2% !important;">
+                                    <select type="text" class="custom-select" id="frontRunner" aria-describedby="inputGroup-sizing-lg"></select>
+                
+                                    <div class="input-group-prepend ">
+                                       <button class="input-group-text bg-danger btn-outline-danger font-weight-bold text-light" onclick="questCat()">Category</button>
+                                    </div>
+                                </div>
+                
+                                <div id="cardDisplay"></div>
+                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 bg-dark"></div>
+                </div>
+            </div>
+<!-- Carousel End -->
+        <!-- jumbotron -->
+        
+
+    </div>
+
+    <script>
+        let localcat = JSON.parse(localStorage.getItem('Storage'))
+        let feedMe  = document.querySelector('#frontRunner')
+        let temp = document.querySelector('#cardDisplay')
+        let quizez = []
+
+        console.log(temp);
+
+        if (localcat !== null) {
+            feedMe.innerHTML = "<option value =''>select your subject</option>"    
+        
+        }
+        for (let i = 0; i < localcat.length; i++) {
+            feedMe.innerHTML += `<option value ="${localcat[i].name}"> ${localcat[i].name} </option>`
+        }
+        console.log(questCat);
+
+
+        function questCat(){
+
+            console.log('working');
+            let feedMe  = document.querySelector('#frontRunner')
+            let cardian = JSON.parse(localStorage.getItem('setQuizQuestions')) || null
+            // console.log(cardian);
+
+            let temp = document.querySelector('#cardDisplay')
+            
+            if (cardian != null){
+                temp.innerHTML = "";
+
+                if(feedMe.value){
+                    cardian = cardian.filter(el => el.category.toLowerCase() == feedMe.value.toLowerCase())  
+                    for (let i = 0; i < cardian.length; i++) {
+
+                        let relatedQuiz = []
+                        cardian.forEach((element, ind) =>{
+                            if(cardian[i].parentId == element.parentId){
+                            relatedQuiz.push(element)
+                            }
+                        })
+                        console.log(relatedQuiz);
+                        let filteredRelatedQuiz = relatedQuiz.filter(el => {
+                            let status = true
+                            quizez.forEach((ele, ind) => {
+                                for (let indx = 0; indx < quizez[ind].length; indx++) {
+                                    // console.log(quizez[ind][indx].id);
+                                    if(quizez[ind][indx].id == el.id){
+                                    status = false
+                                    }
+                                }
+                            })
+                            return status
+                        })  
+                    
+
+                        if(filteredRelatedQuiz.length) quizez.push(filteredRelatedQuiz)
+                        console.log(quizez);
+                    }
+                }
+                for (let c = 0; c < quizez.length; c++) {
+                    temp.innerHTML +=
+                    `
+                        <div class="card mt-5" style="max-width: 1000px;">
+                            <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="../../images.jpg" class="img-responsive w-50 ml-5">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h5 class="card-title ">SUBJECT AVAILABLE</h5>
+                                            <p class="card-text" id="subDisplay">${feedMe.value}</p>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <h5 class="card-title ">TOTAL QUESTIONS</h5>
+
+                                            <button type="button" class="btn btn-primary ml-5">
+                                                <span class="badge badge-light" id="count">${quizez[c].length}</span>
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+                                
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                                    <lable class=" ml-5"> To Start Quiz</lable> <br>
+                                    <button type = 'button' style="background-color:blue; color:#fff; outline:red;" class='pl-3 pr-3 ml-5  btn-outline-light' onclick="takequiz(${c})">click</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    `
+                        
+                }
+
+            }
+        }
+
+        questCat()
+        
+        function takequiz(inde){
+            let exams = JSON.parse(localStorage.getItem('details'))
+            loginStatus = false
+            exams.some(element => {
+                if (element.allEmail || element.allPassword) {
+                    loginStatus = true
+                    detail = element  
+                }
+
+            })
+
+            if (loginStatus) {
+                let fresh = []
+                quizez.forEach((el, ans)=> {
+                    if (ans = inde) {
+                        fresh = el
+                        
+                    }
+                    
+                });
+
+                localStorage.setItem('exam', JSON.stringify(fresh))
+
+                setTimeout(() => {
+                window.location.assign('bootstrapQuiz.html')
+                    
+                }, 1000);
+
+            
+                
+            }
+        
+            // let q=[]
+            // for (let g = 0; g <quizez.length; g++) {
+            //     if(g == i) {
+            //         q=quizez[g]
+            //     }
+            // } 
+
+           
+        
+               
+        }
+
+
+       
+
+            
+
+    </script>
+    <!-- jquery -->
+    <script src="../../boot/jquery.slim.min.js"></script>
+    <!-- popper -->
+    <script src="../../boot/popper.min.js"></script>
+    <!-- bundle js -->
+    <script src="../../boot/bootstrap.bundle.min.js"></script>
+</body>
+</html>

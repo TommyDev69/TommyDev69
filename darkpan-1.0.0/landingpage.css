@@ -1,0 +1,42 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.nav{
+    background-color: #e9ecef;
+}
+.img{
+    height: 10px;
+    margin-left: 40%;
+}
+
+.animatry{
+    text-indent: 18px;
+
+    margin-top:10px;
+    animation: bounce 5s  infinite; 
+    animation-name: example;
+    animation-duration:1s; 
+    color: red;
+    text-shadow: 2px  8px 4px black;
+    position: top left;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes example {
+    from{top:0px;}
+    to{top:6rem;}
+    100%  {color: blue; top: 200px; bottom: 200px;}
+    50%  {color: green; top: 200px; bottom: 200px;}
+    80%  {color: rgb(128, 0, 90); left: 200px; right: 200px;}
+    
+}
+
+.note{
+    text-indent: 18px;
+    padding-top:30px;
+    font-size:15px;
+}

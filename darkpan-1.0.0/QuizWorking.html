@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="img/favicon.ico" rel="icon">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIwQp6LFnlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcEiQSvqcyVLLd9aMhXd13uQjoXEKNosOWaZqXgel0g==">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<style>
+    .covering{
+        border: 2px ;
+        border-style: dotted;
+        max-width:700px;
+    }
+    .int{
+        resize: none;
+    }
+
+    .pre{
+        width: 78%;
+        
+    }
+
+    .int{
+        border: 2px solid #eee;
+        border-radius:10px;
+    }
+
+    textarea[type=text],
+    textarea[type=text]:focus{
+        padding-top:10%;
+        color:#eee;
+        font-weight:bold;
+        
+    }
+
+    input[type=text]:focus{
+        color: #eee;
+    }
+
+    .rounded-pill{
+        background-color:rgb(10, 133, 10);
+        border: 2px solid #eee;
+    }
+    .rounded-pill:hover{
+        color:rgb(10, 133, 10);
+        cursor: pointer;
+        outline: none;
+        font-weight:bold;
+        text-align: center;
+    }
+
+
+    h3{
+        font-size:20px;
+    }
+</style>
+<body>
+    <div class="container-md-fluid covering mt-5 m-auto">
+        <div class="text-center">
+            <img src="../../../Downloads/images-removebg-preview.png" class="img-responsive" alt="">
+            <h1>TOMMY QUIZ</h1>
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <h3 class="text-sm ben" id="count"><i class="fa fa-question" aria-hidden="true"></i>QUESTION: 0/10</h3>   
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-sm" id="subject"><i class="fa fa-book" aria-hidden="true">SUBJECT: Math</i></h3>
+                </div>
+            </div>
+
+            <div class="form-group pre m-auto">
+                <textarea type="text" class="form-control bg-dark text-center int" id="question" rows="3"></textarea>
+            
+
+                <form action="answer" id="allField">
+                    <div class="row mt-5">
+                        <div class="form-group mb-3 col-6">
+                            <input type="text" class="form-control bg-dark rounded-pill" id="">
+                        </div>
+                    
+                        <div class="form-group mb-3 col-6">
+                            <input type="text" class="form-control bg-dark rounded-pill" id="">
+                        </div>
+                    </div>
+               
+
+                        <div class="row mt-5">
+                            <div class="form-group mb-3 col-6">
+                                <input type="text" class="form-control bg-dark rounded-pill" id="">
+                            </div>
+                        
+                            <div class="form-group mb-3 col-6">
+                                <input type="text" class="form-control bg-dark rounded-pill" id="">
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="muv text-center">
+            <button type="button" class="rounded" onclick="nextQustion()"> Next Question</button>
+        </div>
+
+    </div>
+
+    <script>
+        var count, subject, question, allField;
+
+        subject = document.querySelector('#subject');
+
+        question = document.querySelector('#question');
+        allField = document.querySelector('#allField');
+       
+
+        // let setQuizQuestions = JSON.parse(localStorage.getItem('setQuizQuestions')) || null
+        // for(let i = 0; i < setQuizQuestions.length; i++) {
+        //     subject.innerHTML += `<option value='${setQuizQuestions[i].category}'> ${setQuizQuestions[i].category} </option>`    
+        // }
+
+        function dishOut() {
+            let workSpace = JSON.parse(localStorage.getItem('workspace')) || null
+            if(workSpace != null) {
+                let array = []
+                var count = 1
+            }
+            array.forEach((data,a) => {
+                count = Number( a + 1) 
+                array.innerHTML += 
+                `
+                    <textarea>${data.question}</textarea>
+                    <form>${data.answer}</form>
+                    
+                `
+                    if (condition) {
+                        
+                    }
+            });
+        }
+        
+        
+
+
+
+    </script>
+</body>
+</html>
